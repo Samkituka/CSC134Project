@@ -12,6 +12,19 @@ int main()
 	string resolutionString, quality;
 	string title = "Computer Hardware Graphics Quality Recommendation Tool";
 	
+	// Continuation of project 1 
+	// Get the number of computers to be processed.
+	cout << " How many computers are being processed? \n" ;
+	cin>> Ncomputers;
+	
+	while ( Ncomputers <= 0 )
+	{
+		cout << " Please enter a valid number of computers : " ;
+		cin >> Ncomputers; 
+	}
+	
+	string title = "Computer Hardware Graphics Quality Recommendation Tool";
+	
 	// input of the graphics card speed
 	cout << "Please enter the clock speed (in Megahertz) of your graphics card: ";
 	cin >> gSpeed;
@@ -117,16 +130,6 @@ int main()
 	cout << "Recommended Graphics Quality: " << quality << endl;
 	
 	system("pause");
-	
-	// Continuation of project 1 
-	cout << " How many computer do you want to enter information? \n" ;
-	cin>> Ncomputers;
-	
-	while ( Ncomputers <= 0 )
-	{
-		cout << " Please enter a valid number of computers : " ;
-		cin >> Ncomputers; 
-	}
 	
 	
 	

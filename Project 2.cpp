@@ -8,7 +8,7 @@ int main()
 {
 	// variables
 	int gSpeed, pSpeed, cores, resolution, Ncomputers;
-	double multiplier, performanceScore;
+	double multiplier, performanceScore, lowest, highest;
 	string resolutionString, quality;
 	string title = "Computer Hardware Graphics Quality Recommendation Tool";
 	
@@ -16,15 +16,19 @@ int main()
 	// Get the number of computers to be processed.
 	cout << " How many computers are being processed? \n" ;
 	cin>> Ncomputers;
-	
-	while ( Ncomputers <= 0 )
+	// Validation of the number of computer 
+	while ( Ncomputers < 1 )
 	{
-		cout << " Please enter a valid number of computers : " ;
+		cout << " Invalid number entered! Please enter a valid number of computers : " ;
 		cin >> Ncomputers; 
-	}
+	} 
 	
-	string title = "Computer Hardware Graphics Quality Recommendation Tool";
+	// Displaying the title
+	cout << endl << endl << title << endl << endl;
 	
+	for (int c =1; c <= Ncomputers; c++ )
+
+ {
 	// input of the graphics card speed
 	cout << "Please enter the clock speed (in Megahertz) of your graphics card: ";
 	cin >> gSpeed;
@@ -74,10 +78,16 @@ int main()
 	cin >> resolution;
 	 
 	 // Validation of the menu selection. 
-	 while ( resolution <1 or resolution > 16 )
+	 while ( resolution <1 or resolution > 4 )
 	 {
 	 	cout << " Invalid number of resolution entered \n ";
-	 	cout << " Please enter a number between 1 and 16 \n";
+	 	cout << " Please enter a number between 1 and 16 for your resolution: \n";
+	 	cout << "What is the resolution of your monitor? \n";
+       	cout << "\t 1. 1280 x 720 \n"; 
+    	cout << "\t 2. 1920 x 1080 \n";
+	    cout << "\t 3. 2560 x 1440 \n";
+	    cout << "\t 4. 3840 x 2160 \n";
+	    cout << "Please select from the options above: ";
 	 	cin >> resolution;
 	 }
 	 
@@ -101,11 +111,7 @@ int main()
 			multiplier = 0.35;
 			resolutionString = "3840 x 2160";
 			break;
-		default:
-			// error
-			cout << "Invalid resolution menu choice. Program will terminate.";
-			return 0;
-			break;
+	
 	}
 	
 	// calculate the performance score
@@ -134,19 +140,18 @@ int main()
 	}
 	
 	// output
-	cout << endl << endl << title << endl << endl;
 	cout << setprecision(2) << showpoint << fixed;
 	cout << "GPU Clock Speed: " << gSpeed << " MHz" << endl;
 	cout << "CPU Clock Speed: " << pSpeed << " MHz" << endl;
 	cout << "Number of cores: " << cores << endl;
 	cout << "Monitor Resolution: " << resolutionString << endl;
 	cout << "Performance Score: " << performanceScore << endl;
-	cout << "Recommended Graphics Quality: " << quality << endl;
+	cout << "Recommended Graphics Quality: " << quality << endl<< endl;
 	
 	system("pause");
 	
 	
-	
+ }
 	
 	
 	

@@ -30,9 +30,11 @@ int main()
 	cin >> gSpeed;
 	
 	// validate the input of the graphics card
-	if(gSpeed < 0)
+	while (gSpeed < 800 or gSpeed >2000 )
 	{
-		cout << "Invalid graphics card speed entered. Program will terminate.";
+		cout << "Invalid graphics card speed entered. \n";
+		cout << " Please enter a number between 800 and 2000 \n ";
+		cin >> gSpeed ;
 		return 0;
 	}
 	
@@ -41,9 +43,11 @@ int main()
 	cin >> pSpeed;
 	
 	// validate the input of the processor
-	if(pSpeed < 0)
+	while (pSpeed < 1000 or pSpeed >5500 )
 	{
-		cout << "Invalid processor speed entered. Program will terminate.";
+		cout << "Invalid processor speed entered. \n";
+		cout << " Please enter a number between 1000 and 5500 \n" ;
+		cin >> pSpeed ;
 		return 0;
 	}
 	
@@ -52,9 +56,11 @@ int main()
 	cin >> cores;
 	
 	// validate the input of the number of cores
-	if(cores < 0)
+	while (cores < 1 or cores >16 )
 	{
-		cout << "Invalid number of cores entered. Program will terminate.";
+		cout << "Invalid number of cores entered. \n";
+		cout << " Please enter a number between 1 and 16 \n";
+		cin >> cores ;
 		return 0;
 	}
 	
@@ -66,7 +72,15 @@ int main()
 	cout << "\t 4. 3840 x 2160 \n";
 	cout << "Please select from the options above: ";
 	cin >> resolution;
-	
+	 
+	 // Validation of the menu selection. 
+	 while ( resolution <1 or resolution > 16 )
+	 {
+	 	cout << " Invalid number of resolution entered \n ";
+	 	cout << " Please enter a number between 1 and 16 \n";
+	 	cin >> resolution;
+	 }
+	 
 	// use the resolution choice to calculate the multiplier and set the resolution 
 	// string
 	switch(resolution)
